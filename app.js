@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     }, "")
     ind = ind.toString().replace("<!-- LIST -->", s);
     res.send(ind);
-})
+});
 
 app.get ("/js", (req, res )=> {
     res.sendFile(__dirname + "/search.js")
@@ -24,7 +24,9 @@ app.get("/books", (req, res) =>{
     res.send(books);
 })
 
-app.post("/books", (req, res) =>{
+
+
+app.post("/books", (req, res) =>{    
     books.push(req.body.name);
     res.send({"success":true})
 })
